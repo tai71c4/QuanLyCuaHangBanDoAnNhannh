@@ -12,9 +12,12 @@ namespace demo
 {
     public partial class DatMon : Form
     {
-        public DatMon()
+        private int soBan;
+        public DatMon(int soBan)
         {
             InitializeComponent();
+            this.soBan = soBan;
+            lblSoBan.Text = "Bàn " + soBan;
         }
     }
 }

@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblSoBan = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblSoBan
+            // 
+            this.lblSoBan.AutoSize = true;
+            this.lblSoBan.Location = new System.Drawing.Point(330, 43);
+            this.lblSoBan.Name = "lblSoBan";
+            this.lblSoBan.Size = new System.Drawing.Size(51, 16);
+            this.lblSoBan.TabIndex = 0;
+            this.lblSoBan.Text = "Số Bàn";
+            // 
+            // DatMon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSoBan);
+            this.Name = "DatMon";
             this.Text = "DatMon";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblSoBan;
     }
 }

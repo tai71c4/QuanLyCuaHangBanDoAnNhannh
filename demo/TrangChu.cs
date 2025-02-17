@@ -15,28 +15,46 @@ namespace demo
         public TrangChu()
         {
             InitializeComponent();
-            AddEventForTables();
+            this.Load += TrangChu_Load; // Gán sự kiện Load cho form
+
+            // Gán sự kiện click cho tất cả nút bàn
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button && control.Text.StartsWith("Bàn"))
+                {
+                    control.Click += btnBan_Click;
+                }
+            }
         }
-        private void AddEventForTables()
+        private void TrangChu_Load(object sender, EventArgs e)
         {
             foreach (Control control in this.Controls)
             {
-                if (control is Button btn && btn.Text.StartsWith("Bàn"))
+                if (control is Button && control.Text.StartsWith("Bàn "))
                 {
-                    btn.Click += BtnTable_Click;
+                    control.Click += btnBan_Click; // Gán sự kiện BanClick cho button bàn
                 }
             }
         }
 
-        private void BtnTable_Click(object sender, EventArgs e)
+        private void btnBan_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
-            int tableNumber = int.Parse(clickedButton.Text.Replace("Bàn ", "").Trim());
+            if (clickedButton != null)
+            {
+                // Lấy số bàn từ Text của button (VD: "Bàn 1" → 1)
+                int soBan = int.Parse(clickedButton.Text.Replace("Bàn ", ""));
 
-            // Mở form đặt món, truyền số bàn
-            DatMon formDatMon = new DatMon(tableNumber);
-            formDatMon.Show();
+                // Mở form Đặt Món với số bàn
+                DatMon datMonForm = new DatMon(soBan);
+                datMonForm.ShowDialog();
+            }
         }
 
+        
     }
 }
+
+
+
+
