@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace demo
 {
-    public partial class Trangchu2 : Form
+    public partial class KhuyenMai : Form
     {
-        public Trangchu2()
+        public KhuyenMai()
         {
             InitializeComponent();
         }

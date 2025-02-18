@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace demo
 {
-    public partial class DatMon : Form
+    public partial class DonHang : Form
     {
-        private int soBan;
-        public DatMon(int soBan)
+        public DonHang()
         {
             InitializeComponent();
-            this.soBan = soBan;
-            lblSoBan.Text = "Đặt món cho bàn " + soBan;
         }
     }
 }

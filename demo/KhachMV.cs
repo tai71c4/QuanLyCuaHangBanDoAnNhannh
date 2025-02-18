@@ -10,20 +10,26 @@ using System.Windows.Forms;
 
 namespace demo
 {
-    public partial class TrangChu : Form
+    public partial class KhachMV : Form
     {
-        public TrangChu()
+        public KhachMV()
         {
             InitializeComponent();
-            LoadBanAn(); 
+            LoadBanAn();
            
+
+        }
+        private void KhachMV_Load(object sender, EventArgs e)
+        {
+            int soNut = flowLayoutPanel1.Controls.OfType<Button>().Count();
+            
         }
 
         private void LoadBanAn()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear(); // Xóa các button cũ (nếu có)
 
-            for (int i = 1; i <= 16; i++) 
+            for (int i = 1; i <= 16; i++) // Số bàn có thể thay đổi
             {
                 Button btnBan = new Button();
                 btnBan.Text = "Bàn " + i;
@@ -32,18 +38,9 @@ namespace demo
                 btnBan.Height = 75;
                 btnBan.Click += btnBan_Click; 
 
-                flowLayoutPanel1.Controls.Add(btnBan); 
+                flowLayoutPanel1.Controls.Add(btnBan); // Thêm vào FlowLayoutPanel
             }
         }
-
-
-
-        private void TrangChu_Load(object sender, EventArgs e)
-        {
-
-            int soNut = flowLayoutPanel1.Controls.OfType<Button>().Count();
-        }
-
         private void btnBan_Click(object sender, EventArgs e)
         {
             try
@@ -62,8 +59,8 @@ namespace demo
 
             }
         }
+        
 
-       
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SanPham sanPhamForm = new SanPham();
@@ -94,7 +91,7 @@ namespace demo
             khuyenMaiForm.ShowDialog();
         }
 
-        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void báoCáoDoanhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BaoCaoDoanhThu frmBaoCao = new BaoCaoDoanhThu();
             frmBaoCao.ShowDialog();
@@ -106,14 +103,12 @@ namespace demo
             formDangNhap.Show();
         }
 
-        private void btnMangVe_Click(object sender, EventArgs e)
+        private void btnoTaiQuan_Click(object sender, EventArgs e)
         {
-            KhachMV formKhachMV = new KhachMV();
-            formKhachMV.Show();
+            TrangChu formTrangChu = new TrangChu();
+            formTrangChu.Show();
         }
+
+        
     }
 }
-
-
-
-
