@@ -13,7 +13,8 @@ namespace demo
 {
     public partial class DangNhap : Form
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanDoAnNhanh;Integrated Security=True";
+        private string connectionString = "Data Source=.;Initial Catalog=QuanLyCuaHangBanDoAnNhanh;Integrated Security=True";
+        public static string userRole = "";
         public DangNhap()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace demo
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+
             string tenDangNhap = txtTenDangNhap.Text.Trim();
             string matKhau = txtMatKhau.Text.Trim();
 
@@ -36,20 +38,23 @@ namespace demo
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+             
+                string query = "SELECT LoaiTaiKhoan FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
                     cmd.Parameters.AddWithValue("@MatKhau", matKhau);
 
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0)
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)  
                     {
+                        string userRole = result.ToString();  
                         MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        TrangChu formTrangChu = new TrangChu();
+
+                        TrangChu formTrangChu = new TrangChu(userRole);
                         formTrangChu.Show();
 
-                        this.Hide();
+                        this.Hide(); 
                     }
                     else
                     {
@@ -58,7 +63,6 @@ namespace demo
                 }
             }
         }
-
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             this.Hide();

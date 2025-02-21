@@ -12,6 +12,7 @@ namespace demo
 {
     public partial class KhachMV : Form
     {
+        private string userRole;
         public KhachMV()
         {
             InitializeComponent();
@@ -21,10 +22,18 @@ namespace demo
         }
         private void KhachMV_Load(object sender, EventArgs e)
         {
+            if (userRole == "NhanVien")
+            {
+                quảnLýToolStripMenuItem.Enabled = false;
+                thốngKêDoanhThuToolStripMenuItem.Enabled = false;
+            }
             int soNut = flowLayoutPanel1.Controls.OfType<Button>().Count();
             
         }
-
+        public KhachMV(string role) : this()
+        {
+            this.userRole = role;
+        }
         private void LoadBanAn()
         {
             flowLayoutPanel1.Controls.Clear(); // Xóa các button cũ (nếu có)
@@ -65,50 +74,78 @@ namespace demo
         {
             SanPham sanPhamForm = new SanPham();
             sanPhamForm.ShowDialog();
+            this.Close();
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NhanVien nhanVienForm = new NhanVien();
             nhanVienForm.ShowDialog();
+            this.Close();
         }
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KhachHang khachHangForm = new KhachHang();
             khachHangForm.ShowDialog();
+            this.Close();
         }
 
         private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DonHang donHangForm = new DonHang();
             donHangForm.ShowDialog();
+            this.Close();
         }
 
         private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KhuyenMai khuyenMaiForm = new KhuyenMai();
             khuyenMaiForm.ShowDialog();
+            this.Close();
         }
 
         private void báoCáoDoanhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BaoCaoDoanhThu frmBaoCao = new BaoCaoDoanhThu();
             frmBaoCao.ShowDialog();
+            this.Close();
         }
 
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             DangNhap formDangNhap = new DangNhap();
             formDangNhap.Show();
+            this.Hide();
         }
 
         private void btnoTaiQuan_Click(object sender, EventArgs e)
         {
             TrangChu formTrangChu = new TrangChu();
             formTrangChu.Show();
+            this.Close();
         }
 
-        
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userRole == "NhanVien")
+            {
+                MessageBox.Show("Bạn cần tài khoản Admin để truy cập!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void thốngKêDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userRole == "NhanVien")
+            {
+                MessageBox.Show("Bạn cần tài khoản Admin để truy cập!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            BaoCaoDoanhThu bcForm = new BaoCaoDoanhThu();
+            bcForm.Show();
+            this.Close();
+        }
     }
 }

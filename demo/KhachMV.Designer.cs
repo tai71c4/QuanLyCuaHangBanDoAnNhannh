@@ -65,20 +65,18 @@
             // 
             // btnMangVe
             // 
-            this.btnMangVe.Location = new System.Drawing.Point(857, 160);
-            this.btnMangVe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMangVe.Location = new System.Drawing.Point(762, 128);
             this.btnMangVe.Name = "btnMangVe";
-            this.btnMangVe.Size = new System.Drawing.Size(119, 114);
+            this.btnMangVe.Size = new System.Drawing.Size(106, 91);
             this.btnMangVe.TabIndex = 11;
             this.btnMangVe.Text = "Khách Mang Về";
             this.btnMangVe.UseVisualStyleBackColor = true;
             // 
             // btnoTaiQuan
             // 
-            this.btnoTaiQuan.Location = new System.Drawing.Point(857, 38);
-            this.btnoTaiQuan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnoTaiQuan.Location = new System.Drawing.Point(762, 30);
             this.btnoTaiQuan.Name = "btnoTaiQuan";
-            this.btnoTaiQuan.Size = new System.Drawing.Size(119, 114);
+            this.btnoTaiQuan.Size = new System.Drawing.Size(106, 91);
             this.btnoTaiQuan.TabIndex = 10;
             this.btnoTaiQuan.Text = "Khách Tại Quán";
             this.btnoTaiQuan.UseVisualStyleBackColor = true;
@@ -103,168 +101,151 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSo14);
             this.flowLayoutPanel1.Controls.Add(this.btnSo15);
             this.flowLayoutPanel1.Controls.Add(this.btnSo16);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 34);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 27);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(844, 494);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(750, 395);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // btnSo1
             // 
-            this.btnSo1.Location = new System.Drawing.Point(3, 4);
-            this.btnSo1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo1.Location = new System.Drawing.Point(3, 3);
             this.btnSo1.Name = "btnSo1";
-            this.btnSo1.Size = new System.Drawing.Size(199, 114);
+            this.btnSo1.Size = new System.Drawing.Size(177, 91);
             this.btnSo1.TabIndex = 0;
             this.btnSo1.Text = " Số 1";
             this.btnSo1.UseVisualStyleBackColor = true;
             // 
             // btnSo2
             // 
-            this.btnSo2.Location = new System.Drawing.Point(208, 4);
-            this.btnSo2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo2.Location = new System.Drawing.Point(186, 3);
             this.btnSo2.Name = "btnSo2";
-            this.btnSo2.Size = new System.Drawing.Size(199, 114);
+            this.btnSo2.Size = new System.Drawing.Size(177, 91);
             this.btnSo2.TabIndex = 1;
             this.btnSo2.Text = "Số 2";
             this.btnSo2.UseVisualStyleBackColor = true;
             // 
             // btnSo3
             // 
-            this.btnSo3.Location = new System.Drawing.Point(413, 4);
-            this.btnSo3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo3.Location = new System.Drawing.Point(369, 3);
             this.btnSo3.Name = "btnSo3";
-            this.btnSo3.Size = new System.Drawing.Size(199, 114);
+            this.btnSo3.Size = new System.Drawing.Size(177, 91);
             this.btnSo3.TabIndex = 2;
             this.btnSo3.Text = "Số 3";
             this.btnSo3.UseVisualStyleBackColor = true;
             // 
             // btnSo4
             // 
-            this.btnSo4.Location = new System.Drawing.Point(618, 4);
-            this.btnSo4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo4.Location = new System.Drawing.Point(552, 3);
             this.btnSo4.Name = "btnSo4";
-            this.btnSo4.Size = new System.Drawing.Size(199, 114);
+            this.btnSo4.Size = new System.Drawing.Size(177, 91);
             this.btnSo4.TabIndex = 3;
             this.btnSo4.Text = "Số 4";
             this.btnSo4.UseVisualStyleBackColor = true;
             // 
             // btnSo5
             // 
-            this.btnSo5.Location = new System.Drawing.Point(3, 126);
-            this.btnSo5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo5.Location = new System.Drawing.Point(3, 100);
             this.btnSo5.Name = "btnSo5";
-            this.btnSo5.Size = new System.Drawing.Size(199, 114);
+            this.btnSo5.Size = new System.Drawing.Size(177, 91);
             this.btnSo5.TabIndex = 4;
             this.btnSo5.Text = "Số 5";
             this.btnSo5.UseVisualStyleBackColor = true;
             // 
             // btnSo6
             // 
-            this.btnSo6.Location = new System.Drawing.Point(208, 126);
-            this.btnSo6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo6.Location = new System.Drawing.Point(186, 100);
             this.btnSo6.Name = "btnSo6";
-            this.btnSo6.Size = new System.Drawing.Size(199, 114);
+            this.btnSo6.Size = new System.Drawing.Size(177, 91);
             this.btnSo6.TabIndex = 5;
             this.btnSo6.Text = "Số 6";
             this.btnSo6.UseVisualStyleBackColor = true;
             // 
             // btnSo7
             // 
-            this.btnSo7.Location = new System.Drawing.Point(413, 126);
-            this.btnSo7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo7.Location = new System.Drawing.Point(369, 100);
             this.btnSo7.Name = "btnSo7";
-            this.btnSo7.Size = new System.Drawing.Size(199, 114);
+            this.btnSo7.Size = new System.Drawing.Size(177, 91);
             this.btnSo7.TabIndex = 6;
             this.btnSo7.Text = "Số 7";
             this.btnSo7.UseVisualStyleBackColor = true;
             // 
             // btnSo8
             // 
-            this.btnSo8.Location = new System.Drawing.Point(618, 126);
-            this.btnSo8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo8.Location = new System.Drawing.Point(552, 100);
             this.btnSo8.Name = "btnSo8";
-            this.btnSo8.Size = new System.Drawing.Size(199, 114);
+            this.btnSo8.Size = new System.Drawing.Size(177, 91);
             this.btnSo8.TabIndex = 7;
             this.btnSo8.Text = "Số 8";
             this.btnSo8.UseVisualStyleBackColor = true;
             // 
             // btnSo9
             // 
-            this.btnSo9.Location = new System.Drawing.Point(3, 248);
-            this.btnSo9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo9.Location = new System.Drawing.Point(3, 197);
             this.btnSo9.Name = "btnSo9";
-            this.btnSo9.Size = new System.Drawing.Size(199, 114);
+            this.btnSo9.Size = new System.Drawing.Size(177, 91);
             this.btnSo9.TabIndex = 8;
             this.btnSo9.Text = "Số 9";
             this.btnSo9.UseVisualStyleBackColor = true;
             // 
             // btnSo10
             // 
-            this.btnSo10.Location = new System.Drawing.Point(208, 248);
-            this.btnSo10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo10.Location = new System.Drawing.Point(186, 197);
             this.btnSo10.Name = "btnSo10";
-            this.btnSo10.Size = new System.Drawing.Size(199, 114);
+            this.btnSo10.Size = new System.Drawing.Size(177, 91);
             this.btnSo10.TabIndex = 9;
             this.btnSo10.Text = "Số 10";
             this.btnSo10.UseVisualStyleBackColor = true;
             // 
             // btnSo11
             // 
-            this.btnSo11.Location = new System.Drawing.Point(413, 248);
-            this.btnSo11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo11.Location = new System.Drawing.Point(369, 197);
             this.btnSo11.Name = "btnSo11";
-            this.btnSo11.Size = new System.Drawing.Size(199, 114);
+            this.btnSo11.Size = new System.Drawing.Size(177, 91);
             this.btnSo11.TabIndex = 10;
             this.btnSo11.Text = "Số 11";
             this.btnSo11.UseVisualStyleBackColor = true;
             // 
             // btnSo12
             // 
-            this.btnSo12.Location = new System.Drawing.Point(618, 248);
-            this.btnSo12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo12.Location = new System.Drawing.Point(552, 197);
             this.btnSo12.Name = "btnSo12";
-            this.btnSo12.Size = new System.Drawing.Size(199, 114);
+            this.btnSo12.Size = new System.Drawing.Size(177, 91);
             this.btnSo12.TabIndex = 11;
             this.btnSo12.Text = "Số 12";
             this.btnSo12.UseVisualStyleBackColor = true;
             // 
             // btnSo13
             // 
-            this.btnSo13.Location = new System.Drawing.Point(3, 370);
-            this.btnSo13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo13.Location = new System.Drawing.Point(3, 294);
             this.btnSo13.Name = "btnSo13";
-            this.btnSo13.Size = new System.Drawing.Size(199, 114);
+            this.btnSo13.Size = new System.Drawing.Size(177, 91);
             this.btnSo13.TabIndex = 12;
             this.btnSo13.Text = "Số 13";
             this.btnSo13.UseVisualStyleBackColor = true;
             // 
             // btnSo14
             // 
-            this.btnSo14.Location = new System.Drawing.Point(208, 370);
-            this.btnSo14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo14.Location = new System.Drawing.Point(186, 294);
             this.btnSo14.Name = "btnSo14";
-            this.btnSo14.Size = new System.Drawing.Size(199, 114);
+            this.btnSo14.Size = new System.Drawing.Size(177, 91);
             this.btnSo14.TabIndex = 13;
             this.btnSo14.Text = "Số 14";
             this.btnSo14.UseVisualStyleBackColor = true;
             // 
             // btnSo15
             // 
-            this.btnSo15.Location = new System.Drawing.Point(413, 370);
-            this.btnSo15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo15.Location = new System.Drawing.Point(369, 294);
             this.btnSo15.Name = "btnSo15";
-            this.btnSo15.Size = new System.Drawing.Size(199, 114);
+            this.btnSo15.Size = new System.Drawing.Size(177, 91);
             this.btnSo15.TabIndex = 14;
             this.btnSo15.Text = "Số 15";
             this.btnSo15.UseVisualStyleBackColor = true;
             // 
             // btnSo16
             // 
-            this.btnSo16.Location = new System.Drawing.Point(618, 370);
-            this.btnSo16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSo16.Location = new System.Drawing.Point(552, 294);
             this.btnSo16.Name = "btnSo16";
-            this.btnSo16.Size = new System.Drawing.Size(199, 114);
+            this.btnSo16.Size = new System.Drawing.Size(177, 91);
             this.btnSo16.TabIndex = 15;
             this.btnSo16.Text = "Số 16";
             this.btnSo16.UseVisualStyleBackColor = true;
@@ -280,39 +261,40 @@
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản Lý";
+            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm";
             this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân Viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kháchHàngToolStripMenuItem.Text = "Khách Hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // đơnHàngToolStripMenuItem
             // 
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
-            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đơnHàngToolStripMenuItem.Text = "Đơn Hàng";
             this.đơnHàngToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngToolStripMenuItem_Click);
             // 
             // khuyếnMãiToolStripMenuItem
             // 
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
-            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến Mãi";
             this.khuyếnMãiToolStripMenuItem.Click += new System.EventHandler(this.khuyếnMãiToolStripMenuItem_Click);
             // 
@@ -328,7 +310,7 @@
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(162, 26);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
@@ -347,8 +329,8 @@
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(988, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(878, 28);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -359,27 +341,28 @@
             this.thốngKêDoanhThuToolStripMenuItem.Name = "thốngKêDoanhThuToolStripMenuItem";
             this.thốngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.thốngKêDoanhThuToolStripMenuItem.Text = "Thông Kê";
+            this.thốngKêDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.thốngKêDoanhThuToolStripMenuItem_Click);
             // 
             // báoCáoDoanhToolStripMenuItem
             // 
             this.báoCáoDoanhToolStripMenuItem.Name = "báoCáoDoanhToolStripMenuItem";
-            this.báoCáoDoanhToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoDoanhToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.báoCáoDoanhToolStripMenuItem.Text = "Báo Cáo Doanh ";
             this.báoCáoDoanhToolStripMenuItem.Click += new System.EventHandler(this.báoCáoDoanhToolStripMenuItem_Click);
             // 
             // KhachMV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 546);
+            this.ClientSize = new System.Drawing.Size(878, 437);
             this.Controls.Add(this.btnMangVe);
             this.Controls.Add(this.btnoTaiQuan);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KhachMV";
             this.Text = "KhachMV";
             this.Load += new System.EventHandler(this.KhachMV_Load);
-            
             this.flowLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

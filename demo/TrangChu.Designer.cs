@@ -72,8 +72,8 @@
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1016, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(903, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,6 +88,7 @@
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản Lý";
+            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // sảnPhẩmToolStripMenuItem
             // 
@@ -131,6 +132,7 @@
             this.thốngKêDoanhThuToolStripMenuItem.Name = "thốngKêDoanhThuToolStripMenuItem";
             this.thốngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.thốngKêDoanhThuToolStripMenuItem.Text = "Thông Kê";
+            this.thốngKêDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.thốngKêDoanhThuToolStripMenuItem_Click);
             // 
             // báoCáoDoanhThuToolStripMenuItem
             // 
@@ -151,7 +153,7 @@
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(162, 26);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
@@ -180,178 +182,160 @@
             this.flowLayoutPanel1.Controls.Add(this.btnBan14);
             this.flowLayoutPanel1.Controls.Add(this.btnBan15);
             this.flowLayoutPanel1.Controls.Add(this.btnBan16);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 22);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(848, 520);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(754, 416);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnBan1
             // 
-            this.btnBan1.Location = new System.Drawing.Point(3, 4);
-            this.btnBan1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan1.Location = new System.Drawing.Point(3, 3);
             this.btnBan1.Name = "btnBan1";
-            this.btnBan1.Size = new System.Drawing.Size(199, 114);
+            this.btnBan1.Size = new System.Drawing.Size(177, 91);
             this.btnBan1.TabIndex = 0;
             this.btnBan1.Text = "Bàn 1";
             this.btnBan1.UseVisualStyleBackColor = true;
             // 
             // btnBan2
             // 
-            this.btnBan2.Location = new System.Drawing.Point(208, 4);
-            this.btnBan2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan2.Location = new System.Drawing.Point(186, 3);
             this.btnBan2.Name = "btnBan2";
-            this.btnBan2.Size = new System.Drawing.Size(199, 114);
+            this.btnBan2.Size = new System.Drawing.Size(177, 91);
             this.btnBan2.TabIndex = 1;
             this.btnBan2.Text = "Bàn 2";
             this.btnBan2.UseVisualStyleBackColor = true;
             // 
             // btnBan3
             // 
-            this.btnBan3.Location = new System.Drawing.Point(413, 4);
-            this.btnBan3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan3.Location = new System.Drawing.Point(369, 3);
             this.btnBan3.Name = "btnBan3";
-            this.btnBan3.Size = new System.Drawing.Size(199, 114);
+            this.btnBan3.Size = new System.Drawing.Size(177, 91);
             this.btnBan3.TabIndex = 2;
             this.btnBan3.Text = "Bàn 3";
             this.btnBan3.UseVisualStyleBackColor = true;
             // 
             // btnBan4
             // 
-            this.btnBan4.Location = new System.Drawing.Point(618, 4);
-            this.btnBan4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan4.Location = new System.Drawing.Point(552, 3);
             this.btnBan4.Name = "btnBan4";
-            this.btnBan4.Size = new System.Drawing.Size(199, 114);
+            this.btnBan4.Size = new System.Drawing.Size(177, 91);
             this.btnBan4.TabIndex = 3;
             this.btnBan4.Text = "Bàn 4";
             this.btnBan4.UseVisualStyleBackColor = true;
             // 
             // btnBan5
             // 
-            this.btnBan5.Location = new System.Drawing.Point(3, 126);
-            this.btnBan5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan5.Location = new System.Drawing.Point(3, 100);
             this.btnBan5.Name = "btnBan5";
-            this.btnBan5.Size = new System.Drawing.Size(199, 114);
+            this.btnBan5.Size = new System.Drawing.Size(177, 91);
             this.btnBan5.TabIndex = 4;
             this.btnBan5.Text = "Bàn 5";
             this.btnBan5.UseVisualStyleBackColor = true;
             // 
             // btnBan6
             // 
-            this.btnBan6.Location = new System.Drawing.Point(208, 126);
-            this.btnBan6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan6.Location = new System.Drawing.Point(186, 100);
             this.btnBan6.Name = "btnBan6";
-            this.btnBan6.Size = new System.Drawing.Size(199, 114);
+            this.btnBan6.Size = new System.Drawing.Size(177, 91);
             this.btnBan6.TabIndex = 5;
             this.btnBan6.Text = "Bàn 6";
             this.btnBan6.UseVisualStyleBackColor = true;
             // 
             // btnBan7
             // 
-            this.btnBan7.Location = new System.Drawing.Point(413, 126);
-            this.btnBan7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan7.Location = new System.Drawing.Point(369, 100);
             this.btnBan7.Name = "btnBan7";
-            this.btnBan7.Size = new System.Drawing.Size(199, 114);
+            this.btnBan7.Size = new System.Drawing.Size(177, 91);
             this.btnBan7.TabIndex = 6;
             this.btnBan7.Text = "Bàn 7";
             this.btnBan7.UseVisualStyleBackColor = true;
             // 
             // btnBan8
             // 
-            this.btnBan8.Location = new System.Drawing.Point(618, 126);
-            this.btnBan8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan8.Location = new System.Drawing.Point(552, 100);
             this.btnBan8.Name = "btnBan8";
-            this.btnBan8.Size = new System.Drawing.Size(199, 114);
+            this.btnBan8.Size = new System.Drawing.Size(177, 91);
             this.btnBan8.TabIndex = 7;
             this.btnBan8.Text = "Bàn 8";
             this.btnBan8.UseVisualStyleBackColor = true;
             // 
             // btnban9
             // 
-            this.btnban9.Location = new System.Drawing.Point(3, 248);
-            this.btnban9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnban9.Location = new System.Drawing.Point(3, 197);
             this.btnban9.Name = "btnban9";
-            this.btnban9.Size = new System.Drawing.Size(199, 114);
+            this.btnban9.Size = new System.Drawing.Size(177, 91);
             this.btnban9.TabIndex = 8;
             this.btnban9.Text = "Bàn 9";
             this.btnban9.UseVisualStyleBackColor = true;
             // 
             // btnBan10
             // 
-            this.btnBan10.Location = new System.Drawing.Point(208, 248);
-            this.btnBan10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan10.Location = new System.Drawing.Point(186, 197);
             this.btnBan10.Name = "btnBan10";
-            this.btnBan10.Size = new System.Drawing.Size(199, 114);
+            this.btnBan10.Size = new System.Drawing.Size(177, 91);
             this.btnBan10.TabIndex = 9;
             this.btnBan10.Text = "Bàn 10";
             this.btnBan10.UseVisualStyleBackColor = true;
             // 
             // btnBan11
             // 
-            this.btnBan11.Location = new System.Drawing.Point(413, 248);
-            this.btnBan11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan11.Location = new System.Drawing.Point(369, 197);
             this.btnBan11.Name = "btnBan11";
-            this.btnBan11.Size = new System.Drawing.Size(199, 114);
+            this.btnBan11.Size = new System.Drawing.Size(177, 91);
             this.btnBan11.TabIndex = 10;
             this.btnBan11.Text = "Bàn 11";
             this.btnBan11.UseVisualStyleBackColor = true;
             // 
             // btnBan12
             // 
-            this.btnBan12.Location = new System.Drawing.Point(618, 248);
-            this.btnBan12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan12.Location = new System.Drawing.Point(552, 197);
             this.btnBan12.Name = "btnBan12";
-            this.btnBan12.Size = new System.Drawing.Size(199, 114);
+            this.btnBan12.Size = new System.Drawing.Size(177, 91);
             this.btnBan12.TabIndex = 11;
             this.btnBan12.Text = "Bàn 12";
             this.btnBan12.UseVisualStyleBackColor = true;
             // 
             // btnBan13
             // 
-            this.btnBan13.Location = new System.Drawing.Point(3, 370);
-            this.btnBan13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan13.Location = new System.Drawing.Point(3, 294);
             this.btnBan13.Name = "btnBan13";
-            this.btnBan13.Size = new System.Drawing.Size(199, 114);
+            this.btnBan13.Size = new System.Drawing.Size(177, 91);
             this.btnBan13.TabIndex = 12;
             this.btnBan13.Text = "Bàn 13";
             this.btnBan13.UseVisualStyleBackColor = true;
             // 
             // btnBan14
             // 
-            this.btnBan14.Location = new System.Drawing.Point(208, 370);
-            this.btnBan14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan14.Location = new System.Drawing.Point(186, 294);
             this.btnBan14.Name = "btnBan14";
-            this.btnBan14.Size = new System.Drawing.Size(199, 114);
+            this.btnBan14.Size = new System.Drawing.Size(177, 91);
             this.btnBan14.TabIndex = 13;
             this.btnBan14.Text = "Bàn 14";
             this.btnBan14.UseVisualStyleBackColor = true;
             // 
             // btnBan15
             // 
-            this.btnBan15.Location = new System.Drawing.Point(413, 370);
-            this.btnBan15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan15.Location = new System.Drawing.Point(369, 294);
             this.btnBan15.Name = "btnBan15";
-            this.btnBan15.Size = new System.Drawing.Size(199, 114);
+            this.btnBan15.Size = new System.Drawing.Size(177, 91);
             this.btnBan15.TabIndex = 14;
             this.btnBan15.Text = "Bàn 15";
             this.btnBan15.UseVisualStyleBackColor = true;
             // 
             // btnBan16
             // 
-            this.btnBan16.Location = new System.Drawing.Point(618, 370);
-            this.btnBan16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBan16.Location = new System.Drawing.Point(552, 294);
             this.btnBan16.Name = "btnBan16";
-            this.btnBan16.Size = new System.Drawing.Size(199, 114);
+            this.btnBan16.Size = new System.Drawing.Size(177, 91);
             this.btnBan16.TabIndex = 15;
             this.btnBan16.Text = "Bàn 16";
             this.btnBan16.UseVisualStyleBackColor = true;
             // 
             // btnMangVe
             // 
-            this.btnMangVe.Location = new System.Drawing.Point(854, 154);
-            this.btnMangVe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMangVe.Location = new System.Drawing.Point(759, 123);
             this.btnMangVe.Name = "btnMangVe";
-            this.btnMangVe.Size = new System.Drawing.Size(119, 114);
+            this.btnMangVe.Size = new System.Drawing.Size(106, 91);
             this.btnMangVe.TabIndex = 3;
             this.btnMangVe.Text = "Khách Mang Về";
             this.btnMangVe.UseVisualStyleBackColor = true;
@@ -359,29 +343,26 @@
             // 
             // btnoTaiQuan
             // 
-            this.btnoTaiQuan.Location = new System.Drawing.Point(854, 32);
-            this.btnoTaiQuan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnoTaiQuan.Location = new System.Drawing.Point(759, 26);
             this.btnoTaiQuan.Name = "btnoTaiQuan";
-            this.btnoTaiQuan.Size = new System.Drawing.Size(119, 114);
+            this.btnoTaiQuan.Size = new System.Drawing.Size(106, 91);
             this.btnoTaiQuan.TabIndex = 2;
             this.btnoTaiQuan.Text = "Khách Tại Quán";
             this.btnoTaiQuan.UseVisualStyleBackColor = true;
             // 
             // TrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 548);
+            this.ClientSize = new System.Drawing.Size(903, 438);
             this.Controls.Add(this.btnoTaiQuan);
             this.Controls.Add(this.btnMangVe);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TrangChu";
             this.Text = "TrangChu";
             this.Load += new System.EventHandler(this.TrangChu_Load);
-            
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

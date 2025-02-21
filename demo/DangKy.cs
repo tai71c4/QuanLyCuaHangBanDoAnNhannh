@@ -13,7 +13,7 @@ namespace demo
 {
     public partial class DangKy : Form
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyBanDoAnNhanh;Integrated Security=True";
+        private string connectionString = "Data Source=.;Initial Catalog=QuanLyCuaHangBanDoAnNhanh;Integrated Security=True";
         public DangKy()
         {
             InitializeComponent();
