@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class BaoCaoDoanhThu
     {
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblDoanhThu = new System.Windows.Forms.Label();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
@@ -92,6 +92,7 @@
             // 
             // dgvBaoCao
             // 
+            this.dgvBaoCao.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBaoCao.Location = new System.Drawing.Point(12, 142);
             this.dgvBaoCao.Name = "dgvBaoCao";
@@ -102,16 +103,16 @@
             // 
             // chartDoanhThu
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartDoanhThu.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartDoanhThu.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartDoanhThu.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartDoanhThu.Legends.Add(legend3);
             this.chartDoanhThu.Location = new System.Drawing.Point(503, 60);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartDoanhThu.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartDoanhThu.Series.Add(series3);
             this.chartDoanhThu.Size = new System.Drawing.Size(300, 378);
             this.chartDoanhThu.TabIndex = 6;
             this.chartDoanhThu.Text = "chart1";
@@ -157,6 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.lblTongDoanhThu);
@@ -171,6 +173,7 @@
             this.Controls.Add(this.lblDoanhThu);
             this.Name = "BaoCaoDoanhThu";
             this.Text = "BaoCaoDoanhThu";
+            this.Load += new System.EventHandler(this.BaoCaoDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
             this.ResumeLayout(false);

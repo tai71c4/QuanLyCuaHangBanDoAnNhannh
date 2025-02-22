@@ -13,15 +13,16 @@ using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class BaoCaoDoanhThu : Form
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyCuaHangBanDoAnNhanh;Integrated Security=True";
+        Database db = new Database();
         public BaoCaoDoanhThu()
         {
             InitializeComponent();
             LoadChart();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadChart()
         {
@@ -47,57 +48,81 @@ namespace demo
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            LoadDoanhThu();
-        }
-        private void LoadDoanhThu()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            DateTime fromDate = dtpTuNgay.Value;
+            DateTime toDate = dtpDenNgay.Value;
+
+            string query = $@"
+                SELECT NgayThanhToan, SUM(TongTien) AS DoanhThu
+                FROM HoaDon
+                WHERE NgayThanhToan BETWEEN '{fromDate:yyyy-MM-dd}' AND '{toDate:yyyy-MM-dd}'
+                GROUP BY NgayThanhToan
+                ORDER BY NgayThanhToan";
+
+         
+            DataTable dt = db.GetData(query);
+            dgvBaoCao.DataSource = dt;
+
+            decimal totalRevenue = 0;
+            foreach (DataRow row in dt.Rows)
             {
-                conn.Open();
-                string query = @"
-                    SELECT DH.IDDonHang, KH.HoTen AS KhachHang, NV.HoTen AS NhanVien, DH.NgayTao, SUM(CT.SoLuong * CT.Gia) AS TongTien
-                    FROM DonHang DH
-                    JOIN ChiTietDonHang CT ON DH.IDDonHang = CT.IDDonHang
-                    LEFT JOIN KhachHang KH ON DH.IDKhachHang = KH.IDKhachHang
-                    JOIN NhanVien NV ON DH.IDNhanVien = NV.IDNhanVien
-                    WHERE DH.NgayTao BETWEEN @TuNgay AND @DenNgay
-                    GROUP BY DH.IDDonHang, KH.HoTen, NV.HoTen, DH.NgayTao
-                    ORDER BY DH.NgayTao DESC";
+                totalRevenue += Convert.ToDecimal(row["DoanhThu"]);
+            }
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TuNgay", dtpTuNgay.Value);
-                cmd.Parameters.AddWithValue("@DenNgay", dtpDenNgay.Value);
+            lblTongDoanhThu.Text = "Tổng Doanh Thu: " + totalRevenue.ToString("N0");
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
+            chartDoanhThu.Series["DoanhThu"].Points.Clear(); 
 
-                dgvBaoCao.DataSource = dt;
+            foreach (DataRow row in dt.Rows)
+            {
+                DateTime ngayThanhToan = Convert.ToDateTime(row["NgayThanhToan"]);
+                decimal doanhThu = Convert.ToDecimal(row["DoanhThu"]);
 
-                // Tính tổng doanh thu
-                decimal tongDoanhThu = 0;
-                foreach (DataRow row in dt.Rows)
-                {
-                    tongDoanhThu += Convert.ToDecimal(row["TongTien"]);
-                }
-                lblTongDoanhThu.Text = $"Tổng Doanh Thu: {tongDoanhThu:N0} VNĐ";
+                chartDoanhThu.Series["DoanhThu"].Points.AddXY(ngayThanhToan.ToString("dd/MM/yyyy"), doanhThu);
             }
         }
+        
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            if (dgvBaoCao.Rows.Count > 0)
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
+                // Hiển thị hộp thoại lưu file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                saveFileDialog.FileName = "DoanhThuReport.xlsx"; // Đặt tên mặc định cho file
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (var package = new OfficeOpenXml.ExcelPackage())
+                
+                    using (var package = new ExcelPackage())
                     {
-                        var worksheet = package.Workbook.Worksheets.Add("Báo Cáo Doanh Thu");
-                        worksheet.Cells["A1"].LoadFromDataTable((DataTable)dgvBaoCao.DataSource, true);
-                        package.SaveAs(new System.IO.FileInfo(sfd.FileName));
+                        var worksheet = package.Workbook.Worksheets.Add("DoanhThu");
+
+                     
+                        for (int col = 0; col < dgvBaoCao.Columns.Count; col++)
+                        {
+                            worksheet.Cells[1, col + 1].Value = dgvBaoCao.Columns[col].HeaderText; 
+
+                            for (int row = 0; row < dgvBaoCao.Rows.Count; row++)
+                            {
+                                if (dgvBaoCao.Rows[row].Cells[col].Value != null)
+                                {
+                                    worksheet.Cells[row + 2, col + 1].Value = dgvBaoCao.Rows[row].Cells[col].Value.ToString(); 
+                                }
+                            }
+                        }
+
+                      
+                        FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                        package.SaveAs(fileInfo);
                     }
-                    MessageBox.Show("Xuất báo cáo thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Xuất Excel thành công!");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!");
             }
         }
 
@@ -106,6 +131,11 @@ namespace demo
             TrangChu formTrangChu = new TrangChu();
             formTrangChu.Show();
             this.Close();
+        }
+
+        private void BaoCaoDoanhThu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

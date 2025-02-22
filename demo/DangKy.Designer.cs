@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class DangKy
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKy));
             this.lblDangKy = new System.Windows.Forms.Label();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.lblMatKhau = new System.Windows.Forms.Label();
@@ -44,8 +45,10 @@
             // lblDangKy
             // 
             this.lblDangKy.AutoSize = true;
+            this.lblDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.lblDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDangKy.Location = new System.Drawing.Point(235, 9);
+            this.lblDangKy.Location = new System.Drawing.Point(283, 28);
             this.lblDangKy.Name = "lblDangKy";
             this.lblDangKy.Size = new System.Drawing.Size(122, 32);
             this.lblDangKy.TabIndex = 0;
@@ -54,42 +57,53 @@
             // lblTenDangNhap
             // 
             this.lblTenDangNhap.AutoSize = true;
-            this.lblTenDangNhap.Location = new System.Drawing.Point(126, 68);
+            this.lblTenDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTenDangNhap.Location = new System.Drawing.Point(221, 107);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(108, 16);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(153, 18);
             this.lblTenDangNhap.TabIndex = 1;
-            this.lblTenDangNhap.Text = "Tên Đăng Nhập :";
+            this.lblTenDangNhap.Text = "💁Tên Đăng Nhập :";
             // 
             // lblMatKhau
             // 
             this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Location = new System.Drawing.Point(126, 105);
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMatKhau.Location = new System.Drawing.Point(221, 175);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(68, 16);
+            this.lblMatKhau.Size = new System.Drawing.Size(108, 18);
             this.lblMatKhau.TabIndex = 2;
-            this.lblMatKhau.Text = "Mật Khẩu :";
+            this.lblMatKhau.Text = "🔑Mật Khẩu :";
             // 
             // lblNhapLaiMatKhau
             // 
             this.lblNhapLaiMatKhau.AutoSize = true;
-            this.lblNhapLaiMatKhau.Location = new System.Drawing.Point(126, 143);
+            this.lblNhapLaiMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblNhapLaiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNhapLaiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblNhapLaiMatKhau.Location = new System.Drawing.Point(221, 245);
             this.lblNhapLaiMatKhau.Name = "lblNhapLaiMatKhau";
-            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(125, 16);
+            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(179, 18);
             this.lblNhapLaiMatKhau.TabIndex = 3;
-            this.lblNhapLaiMatKhau.Text = "Nhập Lại Mật Khẩu :";
+            this.lblNhapLaiMatKhau.Text = "🔒Nhập Lại Mật Khẩu :";
             // 
             // lblLoai
             // 
             this.lblLoai.AutoSize = true;
-            this.lblLoai.Location = new System.Drawing.Point(126, 183);
+            this.lblLoai.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblLoai.Location = new System.Drawing.Point(221, 310);
             this.lblLoai.Name = "lblLoai";
-            this.lblLoai.Size = new System.Drawing.Size(39, 16);
+            this.lblLoai.Size = new System.Drawing.Size(69, 18);
             this.lblLoai.TabIndex = 4;
-            this.lblLoai.Text = "Loại :";
+            this.lblLoai.Text = "📜Loại :";
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Location = new System.Drawing.Point(343, 223);
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDangKy.Location = new System.Drawing.Point(289, 393);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(85, 25);
             this.btnDangKy.TabIndex = 5;
@@ -99,7 +113,8 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(443, 223);
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnThoat.Location = new System.Drawing.Point(389, 393);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 25);
             this.btnThoat.TabIndex = 6;
@@ -109,21 +124,21 @@
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(278, 65);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(224, 128);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(250, 22);
             this.txtTenDangNhap.TabIndex = 7;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(278, 102);
+            this.txtMatKhau.Location = new System.Drawing.Point(224, 196);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(250, 22);
             this.txtMatKhau.TabIndex = 8;
             // 
             // txtNhapLaiMatKhau
             // 
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(278, 140);
+            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(224, 266);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(250, 22);
             this.txtNhapLaiMatKhau.TabIndex = 9;
@@ -131,7 +146,7 @@
             // cboLoaiTaiKhoan
             // 
             this.cboLoaiTaiKhoan.FormattingEnabled = true;
-            this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(278, 180);
+            this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(224, 331);
             this.cboLoaiTaiKhoan.Name = "cboLoaiTaiKhoan";
             this.cboLoaiTaiKhoan.Size = new System.Drawing.Size(250, 24);
             this.cboLoaiTaiKhoan.TabIndex = 10;
@@ -140,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 302);
+            this.ClientSize = new System.Drawing.Size(709, 514);
             this.Controls.Add(this.cboLoaiTaiKhoan);
             this.Controls.Add(this.txtNhapLaiMatKhau);
             this.Controls.Add(this.txtMatKhau);
@@ -152,6 +167,9 @@
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.lblTenDangNhap);
             this.Controls.Add(this.lblDangKy);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DangKy";
             this.Text = "DangKy";
             this.Load += new System.EventHandler(this.DangKy_Load);

@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class SanPham
     {
@@ -215,6 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvSanPham);
             this.Controls.Add(this.pictureBox1);
@@ -263,11 +264,7 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvSanPham;
         
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDSanPhamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hinhAnhDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

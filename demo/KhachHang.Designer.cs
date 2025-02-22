@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class KhachHang
     {
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.Label();
-            this.txtMaKhuyenMai = new System.Windows.Forms.TextBox();
+            this.txtHoTenKhachHang = new System.Windows.Forms.TextBox();
             this.txtSDTKhachHang = new System.Windows.Forms.TextBox();
             this.txtIDKhachHang = new System.Windows.Forms.TextBox();
             this.lblIDKhachHang = new System.Windows.Forms.Label();
@@ -46,19 +44,12 @@
             this.txtDiemTichLuy = new System.Windows.Forms.TextBox();
             this.lblDiemTichLuy = new System.Windows.Forms.Label();
             this.lblSDTKhachHang = new System.Windows.Forms.Label();
-            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyCuaHangBanDoAnNhanhDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangBanDoAnNhanhDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKhachHang
             // 
-            this.dgvKhachHang.AutoGenerateColumns = false;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.DataSource = this.khachHangBindingSource;
             this.dgvKhachHang.Location = new System.Drawing.Point(31, 228);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
@@ -83,12 +74,12 @@
             this.txtHoTen.TabIndex = 73;
             this.txtHoTen.Text = "Họ Tên";
             // 
-            // txtMaKhuyenMai
+            // txtHoTenKhachHang
             // 
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(398, 78);
-            this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(148, 22);
-            this.txtMaKhuyenMai.TabIndex = 72;
+            this.txtHoTenKhachHang.Location = new System.Drawing.Point(363, 78);
+            this.txtHoTenKhachHang.Name = "txtHoTenKhachHang";
+            this.txtHoTenKhachHang.Size = new System.Drawing.Size(148, 22);
+            this.txtHoTenKhachHang.TabIndex = 72;
             // 
             // txtSDTKhachHang
             // 
@@ -131,6 +122,7 @@
             this.btnTimKiem.TabIndex = 66;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThoat
             // 
@@ -201,6 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblSDTKhachHang);
             this.Controls.Add(this.txtDiemTichLuy);
@@ -208,7 +201,7 @@
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtHoTen);
-            this.Controls.Add(this.txtMaKhuyenMai);
+            this.Controls.Add(this.txtHoTenKhachHang);
             this.Controls.Add(this.txtSDTKhachHang);
             this.Controls.Add(this.txtIDKhachHang);
             this.Controls.Add(this.lblIDKhachHang);
@@ -221,9 +214,6 @@
             this.Name = "KhachHang";
             this.Text = "KhachHang";
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangBanDoAnNhanhDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +223,7 @@
         private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label txtHoTen;
-        private System.Windows.Forms.TextBox txtMaKhuyenMai;
+        private System.Windows.Forms.TextBox txtHoTenKhachHang;
         private System.Windows.Forms.TextBox txtSDTKhachHang;
         private System.Windows.Forms.TextBox txtIDKhachHang;
         private System.Windows.Forms.Label lblIDKhachHang;
@@ -246,16 +236,7 @@
         private System.Windows.Forms.TextBox txtDiemTichLuy;
         private System.Windows.Forms.Label lblDiemTichLuy;
         private System.Windows.Forms.Label lblSDTKhachHang;
-       
-       
-        private System.Windows.Forms.BindingSource sanPhamBindingSource;
-        private System.Windows.Forms.BindingSource quanLyCuaHangBanDoAnNhanhDataSet1BindingSource;
-  
-        private System.Windows.Forms.BindingSource khachHangBindingSource;
         
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDKhachHangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diemTichLuyDataGridViewTextBoxColumn;
+       
     }
 }

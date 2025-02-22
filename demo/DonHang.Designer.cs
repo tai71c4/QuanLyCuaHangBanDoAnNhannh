@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class DonHang
     {
@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
-            this.hoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -51,14 +49,11 @@
             this.lblTrangThai = new System.Windows.Forms.Label();
             this.lblDonHang = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDonHang
             // 
-            this.dgvDonHang.AutoGenerateColumns = false;
             this.dgvDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDonHang.DataSource = this.hoaDonBindingSource;
             this.dgvDonHang.Location = new System.Drawing.Point(23, 231);
             this.dgvDonHang.Name = "dgvDonHang";
             this.dgvDonHang.RowHeadersWidth = 51;
@@ -66,10 +61,6 @@
             this.dgvDonHang.Size = new System.Drawing.Size(741, 213);
             this.dgvDonHang.TabIndex = 75;
             this.dgvDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonHang_CellClick);
-            // 
-            // hoaDonBindingSource
-            // 
-            this.hoaDonBindingSource.DataMember = "HoaDon";
             // 
             // txtTimKiem
             // 
@@ -86,6 +77,7 @@
             this.btnTimKiem.TabIndex = 80;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThoat
             // 
@@ -241,6 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblDonHang);
             this.Controls.Add(this.lblTrangThai);
@@ -265,7 +258,6 @@
             this.Name = "DonHang";
             this.Text = "DonHang";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,12 +285,6 @@
         private System.Windows.Forms.Label lblNgayTao;
         private System.Windows.Forms.Label lblTrangThai;
         private System.Windows.Forms.Label lblDonHang;
-       
-        private System.Windows.Forms.BindingSource hoaDonBindingSource;
-       
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDHoaDonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDonHangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayThanhToanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tongTienDataGridViewTextBoxColumn;
+
     }
 }

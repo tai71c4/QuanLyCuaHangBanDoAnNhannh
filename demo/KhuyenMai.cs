@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class KhuyenMai : Form
     {
@@ -17,6 +17,7 @@ namespace demo
         {
             InitializeComponent();
             LoadData();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadData()
         {
@@ -32,7 +33,7 @@ namespace demo
             DateTime ngayBD = dtpNgayBatDau.Value;
             DateTime ngayKT = dtpNgayKetThuc.Value;
 
-            // Kiểm tra ngày hợp lệ
+           
             if (ngayKT <= ngayBD)
             {
                 MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu!");

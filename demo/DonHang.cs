@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class DonHang : Form
     {
@@ -18,12 +19,13 @@ namespace demo
             InitializeComponent();
             LoadData();
             LoadComboBoxData();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadData()
         {
-            
             string query = "SELECT IDDonHang, IDKhachHang, IDNhanVien, IDKhuyenMai, NgayTao, TrangThai FROM DonHang";
             dgvDonHang.DataSource = db.GetData(query);
+
         }
 
    
@@ -43,17 +45,20 @@ namespace demo
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int idDonHang = int.Parse(txtIDDonHang.Text);
-            int idKhachHang = Convert.ToInt32(cbKhachHang.SelectedValue);
-            int idNhanVien = Convert.ToInt32(cbNhanVien.SelectedValue);
-            int? idKhuyenMai = cbKhuyenMai.SelectedValue != null ? (int?)Convert.ToInt32(cbKhuyenMai.SelectedValue) : null;
-            DateTime ngayTao = dtpNgayTao.Value;
-            string trangThai = cbTrangThai.Text;
+            string query = "INSERT INTO DonHang (IDDonHang, IDKhachHang, IDNhanVien, IDKhuyenMai, NgayTao, TrangThai) " +
+                   "VALUES (@idDonHang, @idKhachHang, @idNhanVien, @idKhuyenMai, @ngayTao, @trangThai)";
 
-            string query = $"INSERT INTO DonHang (IDDonHang, IDKhachHang, IDNhanVien, IDKhuyenMai, NgayTao, TrangThai) " +
-                           $"VALUES ({idDonHang}, {idKhachHang}, {idNhanVien}, {idKhuyenMai}, '{ngayTao}', N'{trangThai}')";
+            SqlParameter[] parameters =
+            {
+        new SqlParameter("@idDonHang", int.Parse(txtIDDonHang.Text)),
+        new SqlParameter("@idKhachHang", Convert.ToInt32(cbKhachHang.SelectedValue)),
+        new SqlParameter("@idNhanVien", Convert.ToInt32(cbNhanVien.SelectedValue)),
+        new SqlParameter("@idKhuyenMai", cbKhuyenMai.SelectedValue ?? (object)DBNull.Value),
+        new SqlParameter("@ngayTao", dtpNgayTao.Value),
+        new SqlParameter("@trangThai", cbTrangThai.Text)
+    };
 
-            if (db.ExecuteQuery(query))
+            if (db.ExecuteQueryWithParams(query, parameters))
             {
                 MessageBox.Show("Thêm đơn hàng thành công!");
                 LoadData();
@@ -69,17 +74,21 @@ namespace demo
             if (dgvDonHang.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvDonHang.SelectedRows[0].Cells[0].Value);
-                int idKhachHang = Convert.ToInt32(cbKhachHang.SelectedValue);
-                int idNhanVien = Convert.ToInt32(cbNhanVien.SelectedValue);
-                int? idKhuyenMai = cbKhuyenMai.SelectedValue != null ? (int?)Convert.ToInt32(cbKhuyenMai.SelectedValue) : null;
-                DateTime ngayTao = dtpNgayTao.Value;
-                string trangThai = cbTrangThai.Text;
+                string query = "UPDATE DonHang SET IDKhachHang = @idKhachHang, IDNhanVien = @idNhanVien, " +
+                               "IDKhuyenMai = @idKhuyenMai, NgayTao = @ngayTao, TrangThai = @trangThai " +
+                               "WHERE IDDonHang = @id";
 
-                string query = $"UPDATE DonHang SET IDKhachHang = {idKhachHang}, IDNhanVien = {idNhanVien}, " +
-                               $"IDKhuyenMai = {idKhuyenMai}, NgayTao = '{ngayTao}', TrangThai = N'{trangThai}' " +
-                               $"WHERE IDDonHang = {id}";
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@id", id),
+            new SqlParameter("@idKhachHang", Convert.ToInt32(cbKhachHang.SelectedValue)),
+            new SqlParameter("@idNhanVien", Convert.ToInt32(cbNhanVien.SelectedValue)),
+            new SqlParameter("@idKhuyenMai", cbKhuyenMai.SelectedValue ?? (object)DBNull.Value),
+            new SqlParameter("@ngayTao", dtpNgayTao.Value),
+            new SqlParameter("@trangThai", cbTrangThai.Text)
+        };
 
-                if (db.ExecuteQuery(query))
+                if (db.ExecuteQueryWithParams(query, parameters))
                 {
                     MessageBox.Show("Cập nhật đơn hàng thành công!");
                     LoadData();
@@ -94,15 +103,21 @@ namespace demo
                 MessageBox.Show("Vui lòng chọn đơn hàng!");
             }
         }
+        
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dgvDonHang.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dgvDonHang.SelectedRows[0].Cells[0].Value);
-                string query = $"DELETE FROM DonHang WHERE IDDonHang = {id}";
+                string query = "DELETE FROM DonHang WHERE IDDonHang = @id";
 
-                if (db.ExecuteQuery(query))
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@id", id)
+        };
+
+                if (db.ExecuteQueryWithParams(query, parameters))
                 {
                     MessageBox.Show("Xóa đơn hàng thành công!");
                     LoadData();
@@ -137,6 +152,28 @@ namespace demo
             TrangChu formTrangChu = new TrangChu();
             formTrangChu.Show(); 
             this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text;
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!");
+                return;
+            }
+
+            string query = "SELECT IDDonHang, IDKhachHang, IDNhanVien, IDKhuyenMai, NgayTao, TrangThai " +
+                           "FROM DonHang WHERE IDDonHang LIKE @keyword OR " +
+                           "IDKhachHang IN (SELECT IDKhachHang FROM KhachHang WHERE HoTen LIKE @keyword) OR " +
+                           "TrangThai LIKE @keyword";
+
+            SqlParameter[] parameters =
+            {
+        new SqlParameter("@keyword", "%" + keyword + "%")
+    };
+
+            dgvDonHang.DataSource = db.ExecuteQueryWithParams(query, parameters);
         }
     }
 }

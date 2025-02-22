@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class SanPham : Form
     {
@@ -21,6 +21,7 @@ namespace demo
         {
             InitializeComponent();
             LoadData();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -104,17 +105,24 @@ namespace demo
 
         private void LoadData()
         {
+            string query = "SELECT IDSanPham, TenSanPham, Gia, HinhAnh, SoLuong FROM SanPham";
+            dgvSanPham.DataSource = db.GetData(query);
 
-           string query = "SELECT * FROM SanPham"; 
-           dgvSanPham.DataSource = db.GetData(query);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM SanPham WHERE TenSanPham LIKE N'%{txtTimKiem.Text}%'";
+            string keyword = txtTenSanPham.Text;
+            string query = $"SELECT * FROM SanPham WHERE TenSanPham LIKE N'%{keyword}%'";
             dgvSanPham.DataSource = db.GetData(query);
         }
-
+        private int GetNextID()
+        {
+            DataTable dt = db.GetData("SELECT MAX(IDSanPham) FROM SanPham");
+            if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
+                return Convert.ToInt32(dt.Rows[0][0]) + 1;
+            return 1;
+        }
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -138,8 +146,7 @@ namespace demo
 
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
+       
                 DataGridViewRow row = dgvSanPham.Rows[e.RowIndex];
                 txtIDSanPham.Text = row.Cells["IDSanPham"].Value.ToString();
                 txtTenSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
@@ -155,7 +162,7 @@ namespace demo
                 {
                     pictureBox1.Image = null;
                 }
-            }
+    
         }
     }
 }

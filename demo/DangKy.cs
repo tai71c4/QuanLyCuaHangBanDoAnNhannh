@@ -9,22 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class DangKy : Form
     {
-        private string connectionString = "Data Source=.;Initial Catalog=QuanLyCuaHangBanDoAnNhanh;Integrated Security=True";
+        private Database db = new Database();
         public DangKy()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackgroundImage = Properties.Resources.Nen;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-      
 
         private void DangKy_Load(object sender, EventArgs e)
         {
-            cboLoaiTaiKhoan.Items.Add("Admin");
-            cboLoaiTaiKhoan.Items.Add("NhanVien");
+            cboLoaiTaiKhoan.Items.AddRange(new object[] { "Admin", "NhanVien" });
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -34,7 +35,8 @@ namespace demo
             string nhapLaiMatKhau = txtNhapLaiMatKhau.Text.Trim();
             string loaiTaiKhoan = cboLoaiTaiKhoan.SelectedItem?.ToString();
 
-            if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(nhapLaiMatKhau) || string.IsNullOrEmpty(loaiTaiKhoan))
+            if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(matKhau) ||
+                string.IsNullOrEmpty(nhapLaiMatKhau) || string.IsNullOrEmpty(loaiTaiKhoan))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,46 +54,39 @@ namespace demo
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "INSERT INTO TaiKhoan (TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES (@TenDangNhap, @MatKhau, @LoaiTaiKhoan)";
+            SqlParameter[] parameters =
             {
-                conn.Open();
-                string query = "INSERT INTO TaiKhoan (TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES (@TenDangNhap, @MatKhau, @LoaiTaiKhoan)";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                    cmd.Parameters.AddWithValue("@MatKhau", matKhau);
-                    cmd.Parameters.AddWithValue("@LoaiTaiKhoan", loaiTaiKhoan);
-                    cmd.ExecuteNonQuery();
-                }
-            }
+                new SqlParameter("@TenDangNhap", tenDangNhap),
+                new SqlParameter("@MatKhau", matKhau),
+                new SqlParameter("@LoaiTaiKhoan", loaiTaiKhoan)
+            };
+            db.ExecuteQueryWithParams(query, parameters);
 
             MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-            DangNhap formDangNhap = new DangNhap();
-            formDangNhap.Show();
+            new DangNhap().Show();
         }
 
         private bool KiemTraTaiKhoanTonTai(string tenDangNhap)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
-                }
-            }
-            
-        }
+            string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap";
 
+            SqlParameter[] parameters =
+            {
+        new SqlParameter("@TenDangNhap", tenDangNhap)
+    };
+
+            object result = db.ExecuteScalar(query, parameters);
+
+            int count = (result != null) ? Convert.ToInt32(result) : 0;
+            return count > 0;
+        }
+            
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-            DangNhap formDangNhap = new DangNhap();
-            formDangNhap.Show();
+            new DangNhap().Show();
         }
     }
     

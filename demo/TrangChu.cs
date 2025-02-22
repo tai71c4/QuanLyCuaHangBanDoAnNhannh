@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class TrangChu : Form
     {
@@ -17,17 +17,20 @@ namespace demo
         {
             InitializeComponent();
             LoadBanAn();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
+          
+           
         }
         public TrangChu(string role) : this()
         {
             this.userRole = role;
         }
+
         private void LoadBanAn()
         {
             flowLayoutPanel1.Controls.Clear();
 
-            for (int i = 1; i <= 16; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 Button btnBan = new Button();
                 btnBan.Text = "Bàn " + i;
@@ -74,60 +77,61 @@ namespace demo
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             SanPham sanPhamForm = new SanPham();
             sanPhamForm.ShowDialog();
-            this.Close();
+            
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             NhanVien nhanVienForm = new NhanVien();
             nhanVienForm.ShowDialog();
-            this.Close();
+            
         }
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             KhachHang khachHangForm = new KhachHang();
             khachHangForm.ShowDialog();
-            this.Close();
+           
         }
 
         private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             DonHang donHangForm = new DonHang();
             donHangForm.ShowDialog();
-            this.Close();
+            
         }
 
         private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             KhuyenMai khuyenMaiForm = new KhuyenMai();
             khuyenMaiForm.ShowDialog();
-            this.Close();
+           
         }
 
         private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             BaoCaoDoanhThu frmBaoCao = new BaoCaoDoanhThu();
             frmBaoCao.ShowDialog();
-            this.Close();
+           
         }
 
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DangNhap formDangNhap = new DangNhap();
             formDangNhap.Show();
-            this.Hide();
+           
         }
 
-        private void btnMangVe_Click(object sender, EventArgs e)
-        {
-            KhachMV formKhachMV = new KhachMV();
-            formKhachMV.Show();
-            this.Close();
-        }
-
+        
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (userRole == "NhanVien")
@@ -151,6 +155,103 @@ namespace demo
             BaoCaoDoanhThu bcForm = new BaoCaoDoanhThu();
             bcForm.Show();
             this.Close();
+        }
+
+       
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnban9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBan15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

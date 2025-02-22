@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class DatMon : Form
     {
@@ -26,6 +26,7 @@ namespace demo
             lblSoBan.Text = "Bàn " + soBan;
             LoadDanhSachMon();
             LoadData();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadDanhSachMon()
         {

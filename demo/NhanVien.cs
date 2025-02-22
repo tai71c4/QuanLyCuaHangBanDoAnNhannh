@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class NhanVien : Form
     {
@@ -18,6 +18,7 @@ namespace demo
             InitializeComponent();
             LoadData();
             LoadTaiKhoan();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadData()
         {

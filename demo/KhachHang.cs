@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public partial class KhachHang : Form
     {
@@ -17,6 +17,7 @@ namespace demo
         {
             InitializeComponent();
             LoadData();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void LoadData()
         {
@@ -26,7 +27,7 @@ namespace demo
         private void btnThem_Click(object sender, EventArgs e)
         {
             int idKhachHang = int.Parse(txtIDKhachHang.Text);
-            string hoTen = txtHoTen.Text;
+            string hoTen = txtHoTenKhachHang.Text;
             string sdt = txtSDTKhachHang.Text;
             int diemTichLuy = int.Parse(txtDiemTichLuy.Text);
 
@@ -53,8 +54,8 @@ namespace demo
                 string sdt = txtSDTKhachHang.Text;
                 int diemTichLuy = int.Parse(txtDiemTichLuy.Text);
 
-                string query = $"UPDATE KhachHang SET HoTen = N'{hoTen}', SDT = '{sdt}', DiemTichLuy = {diemTichLuy} " +
-                               $"WHERE IDKhachHang = {id}";
+                string query = $"UPDATE KhachHang SET HoTen = N'{hoTen}', SDT = '{sdt}', " +
+                               $"DiemTichLuy = {diemTichLuy} WHERE IDKhachHang = {id}";
 
                 if (db.ExecuteQuery(query))
                 {
@@ -63,7 +64,7 @@ namespace demo
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi cập nhật!");
+                    MessageBox.Show("Lỗi khi cập nhật khách hàng!");
                 }
             }
             else
@@ -86,7 +87,7 @@ namespace demo
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xóa!");
+                    MessageBox.Show("Lỗi khi xóa khách hàng!");
                 }
             }
             else
@@ -97,14 +98,11 @@ namespace demo
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
-                txtIDKhachHang.Text = row.Cells["IDKhachHang"].Value.ToString();
-                txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
-                txtSDTKhachHang.Text = row.Cells["SDT"].Value.ToString();
-                txtDiemTichLuy.Text = row.Cells["DiemTichLuy"].Value.ToString();
-            }
+            DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
+            txtIDKhachHang.Text = row.Cells["IDKhachHang"].Value.ToString();
+            txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
+            txtSDTKhachHang.Text = row.Cells["SDT"].Value.ToString();
+            txtDiemTichLuy.Text = row.Cells["DiemTichLuy"].Value.ToString();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -112,6 +110,13 @@ namespace demo
             TrangChu formTrangChu = new TrangChu();
             formTrangChu.Show();
             this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txtHoTen.Text;
+            string query = $"SELECT * FROM KhachHang WHERE HoTen LIKE N'%{keyword}%'";
+            dgvKhachHang.DataSource = db.GetData(query);
         }
     }
 }

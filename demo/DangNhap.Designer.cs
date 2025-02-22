@@ -1,4 +1,4 @@
-﻿namespace demo
+﻿namespace QuanLyCuaHangBanDoAnNhanh
 {
     partial class DangNhap
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.ckbHienMatKhau = new System.Windows.Forms.CheckBox();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
@@ -41,86 +42,108 @@
             // ckbHienMatKhau
             // 
             this.ckbHienMatKhau.AutoSize = true;
-            this.ckbHienMatKhau.Location = new System.Drawing.Point(330, 191);
-            this.ckbHienMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ckbHienMatKhau.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbHienMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ckbHienMatKhau.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ckbHienMatKhau.Location = new System.Drawing.Point(356, 268);
             this.ckbHienMatKhau.Name = "ckbHienMatKhau";
-            this.ckbHienMatKhau.Size = new System.Drawing.Size(136, 24);
-            this.ckbHienMatKhau.TabIndex = 15;
+            this.ckbHienMatKhau.Size = new System.Drawing.Size(124, 21);
+            this.ckbHienMatKhau.TabIndex = 31;
             this.ckbHienMatKhau.Text = "Hiên Mật Khẩu";
-            this.ckbHienMatKhau.UseVisualStyleBackColor = true;
+            this.ckbHienMatKhau.UseVisualStyleBackColor = false;
             this.ckbHienMatKhau.CheckedChanged += new System.EventHandler(this.ckbHienMatKhau_CheckedChanged);
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Location = new System.Drawing.Point(355, 223);
-            this.btnDangKy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDangKy.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDangKy.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDangKy.Location = new System.Drawing.Point(365, 303);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(115, 40);
-            this.btnDangKy.TabIndex = 14;
+            this.btnDangKy.Size = new System.Drawing.Size(102, 32);
+            this.btnDangKy.TabIndex = 30;
             this.btnDangKy.Text = "Đăng Ký";
-            this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(237, 223);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDangNhap.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDangNhap.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDangNhap.Location = new System.Drawing.Point(253, 303);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(115, 40);
-            this.btnDangNhap.TabIndex = 13;
+            this.btnDangNhap.Size = new System.Drawing.Size(102, 32);
+            this.btnDangNhap.TabIndex = 29;
             this.btnDangNhap.Text = "Đăng Nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(218, 156);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMatKhau.BackColor = System.Drawing.Color.White;
+            this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtMatKhau.Location = new System.Drawing.Point(253, 240);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(240, 26);
-            this.txtMatKhau.TabIndex = 12;
+            this.txtMatKhau.Size = new System.Drawing.Size(214, 22);
+            this.txtMatKhau.TabIndex = 28;
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(218, 106);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenDangNhap.BackColor = System.Drawing.Color.White;
+            this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(253, 177);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(240, 26);
-            this.txtTenDangNhap.TabIndex = 11;
+            this.txtTenDangNhap.Size = new System.Drawing.Size(214, 22);
+            this.txtTenDangNhap.TabIndex = 27;
             // 
             // lblMatKhau
             // 
             this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Location = new System.Drawing.Point(97, 160);
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.lblMatKhau.Location = new System.Drawing.Point(250, 219);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(77, 20);
-            this.lblMatKhau.TabIndex = 10;
-            this.lblMatKhau.Text = "Mật Khẩu";
+            this.lblMatKhau.Size = new System.Drawing.Size(103, 18);
+            this.lblMatKhau.TabIndex = 26;
+            this.lblMatKhau.Text = "🔑Mật Khẩu:";
             // 
             // lblTenDangNhap
             // 
             this.lblTenDangNhap.AutoSize = true;
-            this.lblTenDangNhap.Location = new System.Drawing.Point(97, 110);
+            this.lblTenDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTenDangNhap.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblTenDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTenDangNhap.Location = new System.Drawing.Point(250, 156);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(121, 20);
-            this.lblTenDangNhap.TabIndex = 9;
-            this.lblTenDangNhap.Text = "Tên Đăng Nhập";
+            this.lblTenDangNhap.Size = new System.Drawing.Size(148, 18);
+            this.lblTenDangNhap.TabIndex = 25;
+            this.lblTenDangNhap.Text = "💁Tên Đăng Nhập:";
             // 
             // lblDangNhap
             // 
             this.lblDangNhap.AutoSize = true;
-            this.lblDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDangNhap.Location = new System.Drawing.Point(181, 35);
+            this.lblDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.lblDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.lblDangNhap.Location = new System.Drawing.Point(262, 91);
             this.lblDangNhap.Name = "lblDangNhap";
-            this.lblDangNhap.Size = new System.Drawing.Size(180, 32);
-            this.lblDangNhap.TabIndex = 8;
+            this.lblDangNhap.Size = new System.Drawing.Size(189, 32);
+            this.lblDangNhap.TabIndex = 24;
             this.lblDangNhap.Text = "ĐĂNG NHẬP";
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 338);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(719, 458);
             this.Controls.Add(this.ckbHienMatKhau);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.btnDangNhap);
@@ -129,7 +152,10 @@
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.lblTenDangNhap);
             this.Controls.Add(this.lblDangNhap);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             this.Load += new System.EventHandler(this.DangNhap_Load);

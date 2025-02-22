@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 
-namespace demo
+namespace QuanLyCuaHangBanDoAnNhanh
 {
     public class Database
     {
@@ -47,5 +47,43 @@ namespace demo
                 return false;
             }
         }
+        public bool ExecuteQueryWithParams(string query, SqlParameter[] parameters)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddRange(parameters);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+                conn.Close();
+                return false;
+            }
+        }
+        public object ExecuteScalar(string query, SqlParameter[] parameters)
+{
+    object result = null;
+    try
+    {
+        conn.Open();
+        SqlCommand cmd = new SqlCommand(query, conn);
+        cmd.Parameters.AddRange(parameters);
+        result = cmd.ExecuteScalar();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Lỗi: " + ex.Message);
+    }
+    finally
+    {
+        conn.Close();
+    }
+    return result;
+}
     }
 }
